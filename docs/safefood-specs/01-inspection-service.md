@@ -22,13 +22,14 @@
 
 ## Features e tasks
 
+
 ### INS-01 — Fundação e persistência
 **RF:** iniciar serviço isolado com migrations e health check. **RNF:** banco separado, validações e testes reproduzíveis.
-- [ ] INS-01.1 Gerar projeto, configurar perfis `local`/`test`, PostgreSQL, Flyway e Actuator.
-- [ ] INS-01.2 Criar migrations de `checklist_template` e `checklist_question` com FK, índices e posições únicas por template.
-- [ ] INS-01.3 Implementar entidades, repositórios e estrutura controller/service/DTO/mapper.
-- [ ] INS-01.4 Definir JSON de erros (`code`, `message`, `timestamp`) para validação e conflitos.
-- [ ] INS-01.5 Testar migrations e persistência em Testcontainers.
+- [x] INS-01.1 Gerar projeto, configurar perfis `local`/`test`, PostgreSQL, Flyway.
+- [x] INS-01.2 Criar migrations de `checklist_template` e `checklist_question` com FK, índices e posições únicas por template.
+- [x] INS-01.3 Implementar entidades, repositórios e estrutura controller/service/DTO/mapper.
+- [x] INS-01.4 Definir JSON de erros (`code`, `message`, `timestamp`) para validação e conflitos.
+- [x] INS-01.5 Testar migrations e persistência em Testcontainers.
 **Aceite:** aplicação sobe do zero; migrations repetíveis; teste salva template + perguntas; campos inválidos produzem 400.
 
 ### INS-02 — Gerenciar modelos de checklist
