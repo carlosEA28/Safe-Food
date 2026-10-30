@@ -34,12 +34,12 @@
 
 ### INS-02 — Gerenciar modelos de checklist
 **RF:** cadastrar, listar, consultar, editar e desativar modelos e questões. **RNF:** paginação e ordenação estável.
-- [ ] INS-02.1 `POST /checklists`: nome e descrição; iniciar como ativo.
-- [ ] INS-02.2 `POST /checklists/{id}/questions`: texto, categoria, posição, severidade de falha.
-- [ ] INS-02.3 `GET /checklists` paginado; `GET /checklists/{id}` incluindo questões ordenadas.
-- [ ] INS-02.4 `PUT /checklists/{id}` e `PUT /checklists/{id}/questions/{questionId}`.
-- [ ] INS-02.5 `PATCH /checklists/{id}/deactivate`; desativar não pode apagar histórico.
-- [ ] INS-02.6 Cobrir nomes vazios, posições duplicadas, checklist inexistente, criação em modelo inativo.
+- [x] INS-02.1 `POST /checklists`: nome e descrição; iniciar como ativo.
+- [x] INS-02.2 `POST /checklists/{id}/questions`: texto, categoria, posição, severidade de falha.
+- [x] INS-02.3 `GET /checklists` paginado; `GET /checklists/{id}` incluindo questões ordenadas.
+- [x] INS-02.4 `PUT /checklists/{id}` e `PUT /checklists/{id}/questions/{questionId}`.
+- [x] INS-02.5 `PATCH /checklists/{id}/deactivate`; desativar não pode apagar histórico.
+- [x] INS-02.6 Cobrir nomes vazios, posições duplicadas, checklist inexistente, criação em modelo inativo.
 **Aceite:** um checklist com 3 perguntas aparece na ordem configurada; modelo inativo não pode iniciar nova inspeção.
 
 ### INS-03 — Abrir e responder inspeção

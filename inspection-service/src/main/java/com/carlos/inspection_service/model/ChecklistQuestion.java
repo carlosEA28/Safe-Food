@@ -42,4 +42,13 @@ public class ChecklistQuestion {
     public int getPosition() { return position; }
     public Severity getSeverityIfFailed() { return severityIfFailed; }
     public boolean isActive() { return active; }
+
+    public void update(String text, String category, int position, Severity severityIfFailed) {
+        this.text = text;
+        this.category = category;
+        this.position = position;
+        this.severityIfFailed = severityIfFailed;
+    }
+
+    public void deactivate() { this.active = false; }
 }

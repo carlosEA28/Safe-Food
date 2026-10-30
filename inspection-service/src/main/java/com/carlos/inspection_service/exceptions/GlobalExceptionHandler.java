@@ -2,6 +2,7 @@ package com.carlos.inspection_service.exceptions;
 
 import com.carlos.inspection_service.dto.ErrorResponse;
 import java.time.Instant;
+import jakarta.validation.ConstraintViolationException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,21 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(DataIntegrityViolationException.class)
     public ResponseEntity<ErrorResponse> conflict(DataIntegrityViolationException exception) {
         return error(HttpStatus.CONFLICT, "CONFLICT", "Data conflicts with an existing record or constraint");
+    }
+
+    @ExceptionHandler({ChecklistNotFoundException.class, QuestionNotFoundException.class})
+    public ResponseEntity<ErrorResponse> notFound(RuntimeException exception) {
+        return error(HttpStatus.NOT_FOUND, "NOT_FOUND", exception.getMessage());
+    }
+
+    @ExceptionHandler(ChecklistConflictException.class)
+    public ResponseEntity<ErrorResponse> businessConflict(ChecklistConflictException exception) {
+        return error(HttpStatus.CONFLICT, "CONFLICT", exception.getMessage());
+    }
+
+    @ExceptionHandler(ConstraintViolationException.class)
+    public ResponseEntity<ErrorResponse> invalidParameter(ConstraintViolationException exception) {
+        return error(HttpStatus.BAD_REQUEST, "VALIDATION_ERROR", "Invalid request parameter");
     }
 
     private ResponseEntity<ErrorResponse> error(HttpStatus status, String code, String message) {

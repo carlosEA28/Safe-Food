@@ -33,4 +33,11 @@ public class ChecklistTemplate {
     public String getDescription() { return description; }
     public boolean isActive() { return active; }
     public Instant getCreatedAt() { return createdAt; }
+
+    public void update(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
+
+    public void deactivate() { this.active = false; }
 }

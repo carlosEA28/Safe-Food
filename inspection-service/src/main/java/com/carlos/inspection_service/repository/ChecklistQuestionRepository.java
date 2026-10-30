@@ -7,4 +7,7 @@ import java.util.UUID;
 
 public interface ChecklistQuestionRepository extends JpaRepository<ChecklistQuestion, UUID> {
     List<ChecklistQuestion> findByTemplateIdOrderByPositionAsc(UUID templateId);
+    boolean existsByTemplateIdAndPosition(UUID templateId, int position);
+    boolean existsByTemplateIdAndPositionAndIdNot(UUID templateId, int position, UUID id);
+    java.util.Optional<ChecklistQuestion> findByIdAndTemplateId(UUID id, UUID templateId);
 }
